@@ -5,10 +5,10 @@ import folium
 import os
 import tempfile
 
-class Body(QtWidgets.QWidget):
+class Map(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-
+        
         # 레이아웃 설정
         layout = QtWidgets.QVBoxLayout(self)
 
