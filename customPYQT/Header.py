@@ -9,7 +9,7 @@ class Header(QtWidgets.QWidget):
         logoImage = QtGui.QPixmap("assets/logo/wowlogo.png")
         # QLabel 크기에 맞추되, 이미지가 잘리지 않고 비율 유지 ("contain" 효과)
         scaled_pixmap = logoImage.scaled(
-            50,50,
+            60,60,
             QtCore.Qt.KeepAspectRatio,
             QtCore.Qt.SmoothTransformation
         )
@@ -27,6 +27,7 @@ class Header(QtWidgets.QWidget):
 
         # 로고를 수직 가운데 정렬하기 위한 VBox 레이아웃
         self.logo_layout = QtWidgets.QVBoxLayout()
+        self.logo_layout.setContentsMargins(0, 0, 20, 0)
         self.logo_layout.addStretch()  # 위쪽 여백
         self.logo_layout.addWidget(self.logo)
         self.logo_layout.addStretch()  # 아래쪽 여백
@@ -40,8 +41,8 @@ class Header(QtWidgets.QWidget):
         # 전체 레이아웃 (가로 정렬)
         self.layout = QtWidgets.QHBoxLayout(self)
         self.layout.addLayout(self.logo_layout)  # 로고 추가 (수직 정렬 포함)
-        self.layout.addStretch()  # 로고와 버튼 사이 간격 추가
         self.layout.addLayout(self.button_layout)  # 버튼 레이아웃 추가
+        self.layout.addStretch()  # 로고와 버튼 사이 간격 추가
 
         # 헤더 스타일 & 크기 조정
         self.setFixedHeight(100)
