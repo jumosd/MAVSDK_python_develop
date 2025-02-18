@@ -43,10 +43,3 @@ class Body(QtWidgets.QWidget):
 
         # QWebEngineView로 지도 로드
         self.webview.setUrl(QtCore.QUrl.fromLocalFile(map_file))
-
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication([])
-    window = Body()
-    window.show()
-    app.exec()
