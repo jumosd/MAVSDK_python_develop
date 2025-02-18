@@ -22,8 +22,8 @@ class Header(QtWidgets.QWidget):
         self.button2.setStyleSheet("min-width: 80px; min-height: 45px; padding: 10px; font-size: 16px;")
         self.button3 = QtWidgets.QPushButton("비상시경보")
         self.button3.setStyleSheet("min-width: 80px; min-height: 45px; padding: 10px; font-size: 16px;")
-        self.button3 = QtWidgets.QPushButton("배터리 정보")
-        self.button3.setStyleSheet("min-width: 80px; min-height: 45px; padding: 10px; font-size: 16px;")
+        self.button4 = QtWidgets.QPushButton("배터리 정보")
+        self.button4.setStyleSheet("min-width: 80px; min-height: 45px; padding: 10px; font-size: 16px;")
 
         # 로고를 수직 가운데 정렬하기 위한 VBox 레이아웃
         self.logo_layout = QtWidgets.QVBoxLayout()
@@ -37,6 +37,7 @@ class Header(QtWidgets.QWidget):
         self.button_layout.addWidget(self.button1)
         self.button_layout.addWidget(self.button2)
         self.button_layout.addWidget(self.button3)
+        self.button_layout.addWidget(self.button4)
 
         # 전체 레이아웃 (가로 정렬)
         self.layout = QtWidgets.QHBoxLayout(self)
@@ -46,8 +47,13 @@ class Header(QtWidgets.QWidget):
 
         # 헤더 스타일 & 크기 조정
         self.setFixedHeight(100)
-        self.setStyleSheet("border: 2px solid red;")
-        self.setStyleSheet("#headerWidget {border: 2px solid red;}")
+        self.setStyleSheet(
+        """
+            #headerWidget {
+                background-color: #f0f0f0;
+                border-bottom: 1px solid #d0d0d0;
+            }
+        """)
 
 # 실행 코드
 if __name__ == "__main__":
