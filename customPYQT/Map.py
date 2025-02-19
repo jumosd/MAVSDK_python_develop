@@ -4,6 +4,7 @@ from PySide6.QtWebEngineCore import QWebEngineSettings
 import folium
 import os
 import tempfile
+from customPYQT.Drone import Drone
 
 class Map(QtWidgets.QWidget):
     def __init__(self):
@@ -23,7 +24,7 @@ class Map(QtWidgets.QWidget):
         layout.addWidget(self.webview)
 
         # 초기 맵 생성 및 로드
-        self.update_map(37.5665, 126.9780)
+        self.update_map(37.519761357236,126.61111211831)
 
     def update_map(self, latitude, longitude):
         """드론의 위치를 받아서 맵을 업데이트하는 함수"""
